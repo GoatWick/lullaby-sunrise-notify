@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const EmailForm = () => {
   const [email, setEmail] = useState("");
@@ -11,18 +12,47 @@ const EmailForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email || isSubmitting) return;
+    
     setIsSubmitting(true);
     
-    // Here you would normally connect to your backend or service to store the email
-    // This is a simple simulation of that process with a timeout
-    setTimeout(() => {
+    try {
+      // Insert the email into the coming_soon_email_signups table
+      const { error } = await supabase
+        .from('coming_soon_email_signups')
+        .insert([{ email }]);
+      
+      if (error) {
+        if (error.code === '23505') { // Unique violation error code
+          toast({
+            title: "Already subscribed!",
+            description: "This email is already on our notification list.",
+          });
+        } else {
+          console.error('Error saving email:', error);
+          toast({
+            title: "Something went wrong",
+            description: "We couldn't save your email. Please try again later.",
+            variant: "destructive"
+          });
+        }
+      } else {
+        toast({
+          title: "Thank you for subscribing!",
+          description: "We'll notify you when Lullaby Lounge launches.",
+        });
+        setEmail("");
+      }
+    } catch (error) {
+      console.error('Error:', error);
       toast({
-        title: "Thank you for subscribing!",
-        description: "We'll notify you when Lullaby Lounge launches.",
+        title: "Something went wrong",
+        description: "We couldn't save your email. Please try again later.",
+        variant: "destructive"
       });
-      setEmail("");
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
