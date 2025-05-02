@@ -34,7 +34,7 @@ const Index = () => {
       </main>
       
       <footer className="z-10 w-full max-w-4xl mx-auto p-4 text-center text-lullaby-cream/50 text-sm">
-        <p>&copy; {new Date().getFullYear()} Lullaby Lounge. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Lullaby Mums. All rights reserved.</p>
       </footer>
     </div>;
 };
