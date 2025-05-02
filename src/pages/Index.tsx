@@ -10,10 +10,7 @@ const Index = () => {
         
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold mt-8 mb-4 text-lullaby-cream">Lullaby Mums</h1>
         
-        <p className="text-lullaby-cream/90 text-lg sm:text-xl max-w-xl mb-8">
-          A peaceful digital space for mothers awake with their little ones in the early hours.
-          Connect, share stories, and find comfort knowing you're not alone.
-        </p>
+        <p className="text-lullaby-cream/90 text-lg sm:text-xl max-w-xl mb-8">A calm and caring space for mums awake in the early hours — just like you. Chat in real time, share your thoughts, and connect with others who truly understand those quiet, sleepless nights.</p>
         
         <div className="w-20 h-0.5 bg-lullaby-cream/30 my-8"></div>
         
