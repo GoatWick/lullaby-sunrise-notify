@@ -17,16 +17,8 @@ const Index = () => {
         <EmailForm />
         
         <div className="mt-16 flex flex-col gap-2">
-          <p className="text-lullaby-cream/70 text-sm">Coming Soon</p>
-          <div className="flex items-center justify-center gap-2">
-            <div className="w-2 h-2 bg-lullaby-cream rounded-full animate-pulse"></div>
-            <div className="w-2 h-2 bg-lullaby-cream rounded-full animate-pulse" style={{
-            animationDelay: "0.3s"
-          }}></div>
-            <div className="w-2 h-2 bg-lullaby-cream rounded-full animate-pulse" style={{
-            animationDelay: "0.6s"
-          }}></div>
-          </div>
+          
+          
         </div>
       </main>
       
