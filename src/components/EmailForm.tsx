@@ -56,7 +56,7 @@ const EmailForm = () => {
   return <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
       <div className="space-y-2">
         <h3 className="font-serif text-xl text-lullaby-cream">Get notified when we launch</h3>
-        <p className="text-lullaby-cream/80 text-sm">Join our early notification list and be the first to know when Lullaby Mums opens its digital doors.</p>
+        <p className="text-lullaby-cream/80 text-sm">Our digital doors are opening soon — join our early list and be the first to experience Lullaby Mums.</p>
       </div>
       
       <div className="flex flex-col sm:flex-row gap-2">
