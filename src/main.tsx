@@ -6,7 +6,13 @@ import { SpeedInsights } from "@vercel/speed-insights/react"
 import App from './App.tsx'
 import './index.css'
 
-createRoot(document.getElementById("root")!).render(
+// Get the root element safely
+const rootElement = document.getElementById("root");
+if (!rootElement) {
+  throw new Error("Root element with id 'root' not found");
+}
+
+createRoot(rootElement).render(
   <React.StrictMode>
     <App />
     <Analytics />
